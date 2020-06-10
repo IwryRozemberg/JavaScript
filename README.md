@@ -1,3 +1,3 @@
 #JavaScript
 
-* Teste e exemplos do javascript
+- Testes e exemplos do JavaScript
