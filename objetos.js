@@ -77,7 +77,7 @@ console.log("c) Com Classe: ",iwryClass.falar(), "Nome Get:", iwryClass.getNome)
 let funcionario = iwryClass // Ao atribuir um objeto em outro, quando um deles sobre alteração, todos sofrerão, ou seja, é atribuição por referência
 let gerente = {...iwryClass}; //Object.assing transfere apenas os valores para outro objeto, porem só as propriedades, as funcionalidades não irão ser transferidas.
 funcionario.nome = "Novo Funcionario "
-console.log("1. Funcionário: ",funcionario, funcionario.falar(), "\n2. Iwry: ", iwryClass, iwryClass.falar(), "\n3. Gerente: ", gerente, gerente.getNome);
+console.log("1. Funcionário: ",funcionario, funcionario.falar(), "\n2. Iwry: ", iwryClass, iwryClass.falar(), "\n3. Gerente: ", gerente, gerente.nome);
 
 
 function makeAPICall(obj){
