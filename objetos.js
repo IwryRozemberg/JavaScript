@@ -5,7 +5,11 @@ console.log("Resulado: ", teste.toFixed(2));
 
 var testeVar = 0; //Variavel "global", dispnivel em todo código, valor pode ser alterado
 let testeLet = 0; //variavel local, valor pode ser alterado
-const TESTE_CONST = 0; //variavel local, valor estatico, obrigatorio inicializacao
+const testeConst = 0; //variavel local, valor estatico, obrigatorio inicializacao
+
+var numero = 9;
+console.log("Número inicial: ",numero, "Incrementação após Impressão: ", numero++); //Imprime depois faz o incremento
+console.log("Número inicial: ", numero, "Incrementação antes Impressão: ", ++numero); //Faz o incremento depois imprime
 
 //Objetos
 // a) Criando objeto com função construtora
@@ -13,7 +17,9 @@ const TESTE_CONST = 0; //variavel local, valor estatico, obrigatorio inicializac
 function Pessoa(nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
-    this.falar = () => `Meu nome é ${this.nome} ${this.sobrenome}`;
+    this.falar = function() {
+        return `Meu nome é ${this.nome} ${this.sobrenome}`
+    };
 }
 
 const iwry = new Pessoa("Iwry Rozemberg", "Sousa");
@@ -21,24 +27,7 @@ iwry.nome = "IWRY"; //Alterando o nome
 console.log("a) Função Construtora com this: ",iwry.falar(), "Nome Get:", iwry.nome);
 
 
-// Encapsulado com Get e Set
-function PessoaGet(nome, sobrenome) {
-    var nome = nome; 
-    var sobrenome = sobrenome;
-
-    this.falar = () => `Meu nome é ${this.getNome()} ${this.getSobrenome()}`;
-    this.getNome = () => nome;
-    this.setNome = (value) => nome = value;
-    this.getSobrenome = () => sobrenome;
-    this.setSobrenome = (value) => sobrenome = value;
-}
-
-const iwryGet = new PessoaGet("Iwry Rozemberg", "Sousa");
-iwryGet.setNome("IWRY"); //Alterando o nome
-console.log("a2) Função Construtora com Get e Set: ",iwryGet.falar(), "Nome Get:", iwryGet.getNome());
-
 // b) Objeto Libeteal: Código não é reaproveitável.
-
 var iwryLiteral = {
     nome: "Iwry Rozemberg",
     sobrenome: "Sousa",
@@ -52,26 +41,57 @@ console.log("b) Objeto Literal: ",iwryLiteral.falar(), "Nome Get:", iwryLiteral.
 // c) Criando a Classe Pessoa
 class PessoaClass {
     constructor(nome, sobrenome) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+        this._nome = nome;
+        this._sobrenome = sobrenome;
     }
-    falar = () => `Meu nome é ${this.getNome()} ${this.getSobrenome()}`;
-    getNome = () => nome;
-    setNome = (value) => nome = value;
-    getSobrenome = () => sobrenome;
-    setSobrenome = (value) => sobrenome = value;
+    falar() {
+        return `Meu nome é ${this.getNome} ${this.getSobrenome}`;
+    }
+    get getNome() {
+        return this._nome;
+    }
+    /**
+     * @param {(arg0: string) => void} value
+     */
+    set nome(value) {
+        this._nome = value;
+    }
+    get nome() {
+        return this._sobrenome;
+    }
+    /**
+     * @param {(arg0: string) => void} value
+     */
+    set sobrenome(value) {
+        this._sobrenome = sobrenome;
+    }
+    get sobrenome() {
+        return this._sobrenome;
+    }
 }
+// iwry.iwryClass.nome()
+const iwryClass = new PessoaClass("Iwry Rozemberg", "Sousa");
+iwryClass.nome = "IWRY"; //Alterando o nome
+console.log("c) Com Classe: ",iwryClass.falar(), "Nome Get:", iwryClass.getNome);
 
-const iwryClass = new PessoaGet("Iwry Rozemberg", "Sousa");
-iwryClass.setNome("IWRY"); //Alterando o nome
-console.log("c) Com Classe: ",iwryClass.falar(), "Nome Get:", iwryClass.getNome());
-
-// Testando Refências
-var funcionario = iwryClass
-funcionario.setNome("Jorge")
-console.log("Funcionário: ",funcionario.falar(), "Iwry: ", iwryClass.falar());
+let funcionario = iwryClass // Ao atribuir um objeto em outro, quando um deles sobre alteração, todos sofrerão, ou seja, é atribuição por referência
+let gerente = {...iwryClass}; //Object.assing transfere apenas os valores para outro objeto, porem só as propriedades, as funcionalidades não irão ser transferidas.
+funcionario.nome = "Novo Funcionario "
+console.log("1. Funcionário: ",funcionario, funcionario.falar(), "\n2. Iwry: ", iwryClass, iwryClass.falar(), "\n3. Gerente: ", gerente, gerente.getNome);
 
 
-var numero = 9;
-console.log(numero++); //Imprime depois faz o incremento
-console.log(++numero); //Faz o incremento depois imprime
+function makeAPICall(obj){
+    let ob = Object.assign({}, obj);
+    ob['name'] = "hari";
+    console.log('Obect in API call ', ob);
+    // make an API call with obj as params
+  }
+  
+  function doTask(){
+    let mainObj = {'status' : 'new' };
+    console.log('Object before API call ', mainObj);
+    makeAPICall(mainObj);
+    console.log('Object after API call ', mainObj);
+  }
+  
+  doTask()
