@@ -2,7 +2,7 @@
 
 ## Testes e exemplos do JavaScript
 
-### Sinxtase
+### Sintaxe
 - **Tipos de variavéis**
 - **Objetos:**
     - Criando objeto com função construtora (utilizando this e encapsulando)
