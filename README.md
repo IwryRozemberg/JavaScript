@@ -13,3 +13,10 @@
     - If Ternário
     - Utilizando operador &&
 - **For:**
+    - For
+    - For in
+    - For on
+    
+- ** Dates **
+    - instance Date
+    - biblioteca moment
