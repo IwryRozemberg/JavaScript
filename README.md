@@ -20,3 +20,8 @@
 - **Dates:**
     - instance Date
     - biblioteca moment
+- **Array**
+    - For each
+    - Filter
+    - Map
+    - Reduce
