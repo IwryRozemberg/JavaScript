@@ -16,7 +16,6 @@
     - For
     - For in
     - For on
-    
 - **Dates:**
     - instance Date
     - biblioteca moment
@@ -25,3 +24,9 @@
     - Filter
     - Map
     - Reduce
+- **String**
+    - Substring
+    - Split
+    - IndexOf
+    - Replace
+    - Slice
