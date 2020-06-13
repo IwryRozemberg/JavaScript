@@ -51,7 +51,7 @@ class PessoaClass {
         return this._nome;
     }
     /**
-     * @param {(arg0: string) => void} value
+     * @param {(nome: string)} value
      */
     set nome(value) {
         this._nome = value;
@@ -60,7 +60,7 @@ class PessoaClass {
         return this._sobrenome;
     }
     /**
-     * @param {(arg0: string) => void} value
+     * @param {(sobrenome: string)} value
      */
     set sobrenome(value) {
         this._sobrenome = sobrenome;

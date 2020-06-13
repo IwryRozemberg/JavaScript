@@ -46,6 +46,11 @@ var carrosList = [
     new Carro('Logan', 'Renault', 15000, 1)
 ];
 
+var carrosListPersonal = [
+    new Carro('Corolla', 'Toyota', 88000, 1),
+    new Carro('Golf', 'Volkswagen', 30000, 1),
+    new Carro('Ecosport', 'Ford', 50000, 1)
+]
 
 // For Each: Utiliza uma função callback para executar a propriedade do Array
 let total = 0;
@@ -98,3 +103,12 @@ function agruparPorMarca(carrosArray, propriedade) {
 }
 const grupoCarros = agruparPorMarca(carrosList, 'marca');
 console.log("REDUCE: Agrupar por marca => ", grupoCarros);
+
+//Concat
+carrosTotal = carrosList.concat(carrosListPersonal);
+// console.log("CONCAT: ", carrosTotal);
+
+carroAtual = carrosTotal.filter(carro => carro['modelo'] === 'Corolla');
+console.log("Lingando: ");
+carroAtual[0].ligar();
+console.log("CARRO ATUAL: ", carroAtual);

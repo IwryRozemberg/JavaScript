@@ -16,6 +16,8 @@
     - For
     - For in
     - For on
+
+### Dates/Array/String
 - **Dates:**
     - instance Date
     - biblioteca moment
@@ -24,9 +26,12 @@
     - Filter
     - Map
     - Reduce
+    - Concat
 - **String**
     - Substring
     - Split
     - IndexOf
     - Replace
     - Slice
+
+### WEB
