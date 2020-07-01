@@ -1,4 +1,11 @@
 class Carro {
+    /**
+     * 
+     * @param {string} modelo 
+     * @param {string} marca 
+     * @param {number} preco 
+     * @param {number} qtde 
+     */
     constructor(modelo, marca, preco, qtde) {
         this._modelo = modelo;
         this._marca = marca;
@@ -20,15 +27,15 @@ class Carro {
     get qtde() {
         return this._qtde;
     }
-    get turnOn(){
+    get turnOn() {
         return this._turnOn;
     }
-    ligar(){
+    ligar() {
         this._turnOn = true;
-        console.log("Vruuummmm!!!!");        
+        console.log("Vruuummmm!!!!");
     }
     buzinar = () => console.log("Sai da frente!!!");
 }
 
-module.exports.class = Carro;
+exports.Carro = Carro;
 // module.exports = new Carro();

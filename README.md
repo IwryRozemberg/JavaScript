@@ -34,4 +34,12 @@
     - Replace
     - Slice
 
+### Orientação a Objeto
+- **Objetos e vetores**
+    - função call()
+    - função apply()
+    - protótipos
+    - classes
+
 ### WEB
+- **Manipulando o DOM**

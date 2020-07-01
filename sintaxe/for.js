@@ -1,4 +1,4 @@
-const Carro = require("../Carro.js").default
+const Carro = require("../Carro.js").Carro;
 
 var carrosList = [
     new Carro('Corsa', 'Chevrolet', 45000, 5),
@@ -38,6 +38,7 @@ for (const i in cores) {
 
 // For Each: Utiliza uma função callback para executar a propriedade do Array
 total = 0;
+
 function totalEstoque(item, index) {
     const { preco, qtde } = item
     total += preco * qtde;
