@@ -11,6 +11,4 @@ http.createServer((requisicao, resposta) => {
         }
         resposta.end();
     })
-}).listen(porta);
-
-console.log(`Servidor está em execução: http://localhost:${porta}`);
+}).listen(porta, () => console.log(`Servidor em execução: http://localhost:${porta}`));

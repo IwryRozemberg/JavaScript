@@ -12,10 +12,11 @@ const dtNascMateus = new Date(2014, 1, 17)
 const idade = (hoje - dtNascimento) / umAno;
 const diasVividos = (hoje - dtNascimento) / umDia;
 
-
+console.log('Um dia: ', umDia, '\nUm ano:', umAno);
 console.log("Hoje: ", hoje);
+console.log("Hoje2: ", date);
 console.log("Dia: ", date.getDate(), "Mês: 0-11 ", date.getMonth(), "Ano: ", date.getFullYear());
-console.log("Dia da semana: 0-6",date.getDay());
+console.log("Dia da semana: 0-6", date.getDay());
 console.log("Um dia: ", umDia);
 console.log("Dt Nascimento: ", dtNascimento);
 console.log("Idade: ", idade);
@@ -24,8 +25,8 @@ console.log("Dt Mateus: ", dtNascMateus);
 console.log("Idade Mateus: ", ((hoje - dtNascMateus) / umAno));
 
 //Verificar se é uma data
-if(date instanceof Date && !isNaN(date)) {
-    console.log(moment(date).format('LLL'), 'É uma data válida');    
+if (date instanceof Date && !isNaN(date)) {
+    console.log(moment(date).format('LLL'), 'É uma data válida');
 } else {
     console.log(date, 'Não é uma data válida');
 }
@@ -45,9 +46,8 @@ console.log(moment.locale()); //check
 console.log(moment().format('L'));
 const dtNiver = moment(dtNascMateus);
 const today = moment();
-console.log("Hoje: ",today.format('L'));
+console.log("Hoje: ", today.format('L'));
 console.log('Aniversário: ', dtNiver.format("L"));
-console.log('Idade: ',today.diff(dtNiver, 'years'));
-console.log('Dias vividos: ',today.diff(dtNiver, 'days'));
+console.log('Idade: ', today.diff(dtNiver, 'years'));
+console.log('Dias vividos: ', today.diff(dtNiver, 'days'));
 console.log(march.format('MMMM')) // 'March', mesmo apos alterado, as variaveis com valores anteriores a alteração, permanecem
-

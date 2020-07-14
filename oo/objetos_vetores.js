@@ -103,4 +103,4 @@ function comparador(predicado) {
     }
 }
 
-var arraySort = [1, 3, -1, -6, 0, -100, 22, 20, -30, 1114].sort(comparador(menorOuIgual))
+var arraySort = [1, 3, -1, -6, 0, -100, 22, 20, -30, 1114].sort(comparador(menorOuIgual));
